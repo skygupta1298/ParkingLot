@@ -1,0 +1,74 @@
+ParkingLot.java
+    - Instance type - Singleton instance
+    - Fields
+    1. floors : Map<Integer,Floor>
+    2.
+    --
+    - Methods
+    --> getParkingLotInstance();
+    --> addFloor(int floorId);
+    --> addSlot(int floorId);
+    -->
+
+Floor.java
+    - Instance - Prototype
+    - Fields
+    1. slots : Map<Integer,Slot>
+    - Methods
+    1.
+
+Slot.java
+    - Instance - Prototype
+    - Fields
+    1. vehicleType : VehicleType
+    2. isOccupied : boolean
+    - Methods
+    1. parkVehicle(Vehicle vehicle)
+    2. isSlotOccupied()
+
+Ticket.java
+
+    - Instance - Prototype
+    - Fields
+    1. ticketId : String
+    2. parkingLotId : String
+    3. floorId : Integer
+    4. slotNo : Integer
+    5. vehicle : Vehicle
+    6. duration : Integer(hour)
+    7. price : double
+
+enum VehicleType
+CAR, BIKE, TRUCK
+
+enum DisplayType
+FREE_COUNT, FREE_SLOTS, OCCUPIED_SLOTS
+
+Vehicle.java
+    - Instance - Prototype
+    - Fields
+    1. type : VehicleType
+    2. regNo : String
+    3. color : String
+
+interface ParkingStrategy
+
+    - Methods
+    1. void park()
+
+interface PricingStrategy
+
+    - Methods
+    1. void calculatePrice()
+
+Runner.java
+
+    - Methods
+    1. main(String args[])
+
+interface Command
+    - Implementations
+    1. CreateParkingLotCommand
+    2. ParkVehicleCommand
+    3. UnparkVehicleCommand
+    4. DisplayCommand
